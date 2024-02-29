@@ -1,0 +1,201 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body
+{
+    list-style: none;
+    background: #ADBEF4;
+}
+
+.user-img
+{
+    width: 50px;
+    border-radius: 100%;
+    border: 1px solid #eee;
+}
+
+.sidebar
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80px;
+    background: #211D28;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active ~ .main-content
+{
+    left: 250px;
+    width: calc(100% - 250px);
+}
+
+.sidebar.active
+{
+    width: 250px;
+}
+
+.sidebar #btn
+{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.sidebar.active #btn
+{
+    left: 90%;
+}
+
+.sidebar .top .logo
+{
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.sidebar.active .top .logo
+{
+    opacity: 1;
+}
+
+.top .logo i
+{
+    font-size: 2rem;
+    margin-right: 5px;
+}
+
+.user
+{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.user p
+{
+    color: #fff;
+    margin-left: 1rem;
+    opacity: 1;
+}
+
+.bold
+{
+    font-weight: 600;
+}
+
+.sidebar p
+{
+    opacity: 0;
+}
+
+.sidebar.active p
+{
+    opacity: 1;
+}
+
+.sidebar ul li
+{
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    width: 90%;
+    margin: .8rem auto;
+    line-height: 50px;
+}
+
+.sidebar ul li a
+{
+    color: #0FEB6C;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.8rem;
+}
+
+.sidebar ul li a:hover
+{
+    background: #0FEB6C;
+    color: #211D28;
+    box-shadow: 0px 0px 2rem #0FEB6C;
+}
+
+.sidebar ul li a i
+{
+    min-width: 50px;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    transition: all .5s;
+}
+
+.sidebar ul li a:hover i
+{
+    transform: rotate(360deg);
+    
+}
+
+.sidebar .nav-item
+{
+    display: none;
+}
+
+.sidebar.active .nav-item
+{
+    display: block;
+}
+
+.sidebar ul li .tooltip
+{
+    position: absolute;
+    left: 125px;
+    top: 10%;
+    background: #0FEB6C;
+    box-shadow:  7px 7px 17px #0bac4f,
+    -7px -7px 15px #13ff89;
+    border-radius: .6rem;
+    padding: .4rem 1.2rem;
+    line-height: 1.8rem;
+    z-index: 20;
+    display: none;
+}
+
+.sidebar ul li:hover .tooltip
+{
+    display: block;
+}
+
+.sidebar.active ul li .tooltip
+{
+    display: none;
+}
+
+.main-content
+{
+    position: relative;
+    background: #ADBEF4;
+    min-height: 100vh;
+    top: 0;
+    left: 80px;
+    width: calc(100% - 80px);
+    padding: 1rem;
+}
